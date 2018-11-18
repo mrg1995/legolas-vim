@@ -56,12 +56,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 " Class/module browser
 Plug 'majutsushi/tagbar'
-" Code and files fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
 " Extension to ctrlp, for fuzzy command finder
 Plug 'fisadev/vim-ctrlp-cmdpalette'
-" Zen coding
-Plug 'mattn/emmet-vim'
 " Git integration
 Plug 'motemen/git-vim'
 " Tab list panel
@@ -106,6 +102,9 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 " Plug 'airblade/vim-gitgutter'
+"
+" vim quick paste
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Initialize plugin system
 call plug#end()
@@ -325,9 +324,6 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/Wombat'
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
-
-" my add to run in current window
-Plug 'thinca/vim-quickrun'
 
 " djagno
 Plug 'lambdalisue/vim-django-support'
@@ -623,10 +619,6 @@ let g:airline#extensions#whitespace#enabled = 0
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-
-
-
-
 map <F5> :call CompileRunGcc()<CR>
 
 func! CompileRunGcc()
@@ -663,26 +655,9 @@ endfunc
 "markdownstop
 "map <c-k> :MarkdownPreviewStop<CR>
 
-
-" quickrun
-Plug 'thinca/vim-quickrun'
-
-" quickrun {{{
-    let g:quickrun_config = {
-    \   "_" : {
-    \       "outputter" : "message",
-    \   },
-    \}
-
-    let g:quickrun_no_default_key_mappings = 1
-    nmap <Leader>r <Plug>(quickrun)
-    map <c-j> :QuickRun<CR>
-" }}}
-"
-
-autocmd BufNewFile *.py,*.sh exec ":call SetTitle()"
+autocmd BufNewFile *.py,*.sh exec ":call AutoSetTitle()"
 ""定义函数SetTitle，自动插入文件头
-func SetTitle()
+func AutoSetTitle()
 "如果文件类型为.sh文件
 if &filetype == 'sh'
     call setline(1,"\#########################################################################")
