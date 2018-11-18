@@ -637,7 +637,7 @@ func! CompileRunGcc()
 endfunc
 
 "仅用于运行django
-map <F6> :call DjRun()<CR>
+" map <F6> :call DjRun()<CR>
 func! DjRun()
     exec 'w'
     exec '!time python manage.py runserver'
