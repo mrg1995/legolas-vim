@@ -150,7 +150,7 @@ au BufNewFile,BufRead *.tpl set ft=html
 " syntastic
 let &runtimepath.=',~/.vim/plugged/ale'
 let g:ale_sign_column_always = 0 " 一般需要实时检查，默认关闭
-let g:ale_lint_on_save = 1 " save file auto check
+" let g:ale_lint_on_save = 1 " save file auto check
 let g:ale_lint_on_text_changed = 0 " for ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0 " for ale_lint_on_save = 1
 let g:ale_echo_msg_error_str = 'Error'
