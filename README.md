@@ -17,7 +17,7 @@ vim扩展管理器使用的是异步工具[vim-plug](https://github.com/junegunn
 
 **支持Ubuntu、Centos（需要先处理下问题5 sudo vim的问题）、Mac OSX（默认基于brew安装新版vim）**，一键安装：
 
-    cd ~ && rm -rf legolas-vim && git clone https://github.com/TTWShell/legolas-vim.git && cd legolas-vim && bash install.sh INIT
+    cd ~ && rm -rf legolas-vim && git clone https://github.com/wktadmin/legolas-vim.git && cd legolas-vim && bash install.sh INIT
 
 如果用户修改了vimrc配置文件，运行以下命令更新即可：
 
@@ -84,11 +84,11 @@ vim扩展管理器使用的是异步工具[vim-plug](https://github.com/junegunn
 10. 怎么关闭文档实时预览：
 
     If you don't want this window to ever show up, add set completeopt-=preview to your vimrc. Also make sure that the g:ycm_add_preview_to_completeopt option is set to 0.
-    
+
 11. 在vim启动时提示 The ycmd server SHUT DOWN (restart with ':YcmRestartServer'). Unexpected exit code -11. Type ':YcmToggleLogs ycmd_52907_stderr_R736k6.log' to check the logs：
-    
+
     可能是因为安装脚本使用的是anaconda提供的python编译YouCompleteMe导致的，暂时修改环境变量让python命令指向的不是anaconda的python或者修改install-plugin.sh里面rebuild函数中的python install.py将python改为绝对路径均可。[相关issue](https://github.com/Valloric/YouCompleteMe/issues/3039)
-    
+
 12. 关于其他插件使用问题，**建议直接查询文档**，如果你觉得是一个常见问题／需要花时间去处理的问题，欢迎提pr，我会审核，然后合并到master。
 
 
