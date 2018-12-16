@@ -683,3 +683,6 @@ autocmd BufNewFile * normal G
 endfunc
 so ~/.vimrc.local
 
+"leader
+let mapleader=";"
+
